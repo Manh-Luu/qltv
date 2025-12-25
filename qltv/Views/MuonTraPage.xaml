@@ -1,0 +1,50 @@
+<ContentPage
+    x:Class="qltv.Views.MuonTraPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Quản Lý Mượn Trả">
+
+    <Grid Padding="15" ColumnDefinitions="2*,3*">
+
+        <!-- Danh sách -->
+        <CollectionView Grid.Column="0"
+                        ItemsSource="{Binding MuonTraList}"
+                        SelectedItem="{Binding SelectedMuonTra, Mode=TwoWay}"
+                        SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding MaDocGia}" FontAttributes="Bold"/>
+                            <Label Text="{Binding TenDocGia}"/>
+                            <Label Text="{Binding MaSach}"/>
+                            <Label Text="{Binding NgayMuon, StringFormat='Mượn: {0:dd/MM/yyyy}'}"/>
+                            <Label Text="{Binding DaTra, StringFormat='Đã trả: {0}'}"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Form -->
+        <VerticalStackLayout Grid.Column="1" Spacing="10">
+            <Entry Placeholder="Mã độc giả"
+                   Text="{Binding SelectedMuonTra.MaDocGia}"/>
+
+            <Entry Placeholder="Tên độc giả"
+                    Text="{Binding SelectedMuonTra.TenDocGia}"/>
+
+            <Entry Placeholder="Mã sách"
+                   Text="{Binding SelectedMuonTra.MaSach}"/>
+
+            <DatePicker Date="{Binding SelectedMuonTra.NgayMuon}"/>
+
+            <Button Text="Mượn mới" BackgroundColor="#007bff" Command="{Binding MoiCommand}"/>
+            <Button Text="Lưu" BackgroundColor="#4CAF50" Command="{Binding LuuCommand}"/>
+            <Button Text="Sửa" BackgroundColor="#ffc107" Command="{Binding SuaCommand}"/>
+            <Button Text="Trả sách" BackgroundColor="#6c757d" Command="{Binding TraSachCommand}"/>
+            <Button Text="Xóa" BackgroundColor="#F44336" Command="{Binding XoaCommand}"/>
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

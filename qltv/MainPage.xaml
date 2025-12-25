@@ -1,0 +1,116 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="qltv.MainPage"
+             xmlns:vm="clr-namespace:qltv.ViewModels"
+             Title="Quản Lý Hệ Thống"
+             BackgroundColor="#E0E0E0">
+
+    <Grid RowDefinitions="Auto, *" ColumnDefinitions="200, *, 150" Padding="10" RowSpacing="5" ColumnSpacing="5">
+
+        <Border Grid.Row="0" Grid.ColumnSpan="3" Padding="10" BackgroundColor="#2E8B57" StrokeShape="RoundRectangle 5,5,5,5">
+            <Label Text="Quản Lý Thư Viện" 
+                   TextColor="White" 
+                   FontSize="28" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" />
+        </Border>
+
+        <StackLayout Grid.Row="1" Grid.Column="0" Spacing="10">
+
+            <Label Text="Loại Sách" FontSize="16" FontAttributes="Bold" TextColor="#2E8B57"/>
+            <Border BackgroundColor="White" Padding="10" HeightRequest="150" StrokeThickness="1" Stroke="#A9A9A9">
+            </Border>
+
+            
+            
+            <Label Text="Danh Sách" FontSize="16" FontAttributes="Bold" TextColor="#2E8B57"/>
+
+            <Grid ColumnDefinitions="40, *, 40, 50" BackgroundColor="#A9A9A9" Padding="5">
+                <Label Grid.Column="0" Text="Mã" FontAttributes="Bold" FontSize="10" TextColor="Black"/>
+                <Label Grid.Column="1" Text="Tên Sách" FontAttributes="Bold" FontSize="10" TextColor="Black"/>
+                <Label Grid.Column="2" Text="Loại" FontAttributes="Bold" FontSize="10" TextColor="Black"/>
+                <Label Grid.Column="3" Text="SL" FontAttributes="Bold" FontSize="10" TextColor="Black"/>
+            </Grid>
+
+            <CollectionView ItemsSource="{Binding BookList}" 
+                            SelectionMode="Single"
+                            SelectedItem="{Binding SelectedBook, Mode=TwoWay}"
+                            VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="40, *, 40, 50" Padding="5">
+                            <Label Grid.Column="0" Text="{Binding MaSach}" FontSize="12" TextColor="Black"/>
+                            <Label Grid.Column="1" Text="{Binding TenSach}" FontSize="12" TextColor="Black"/>
+                            <Label Grid.Column="2" Text="{Binding MaLoaiSach}" FontSize="12" TextColor="Black"/>
+                            <Label Grid.Column="3" Text="{Binding SoLuong}" FontSize="12" TextColor="Black"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Grid.Column="1" Spacing="10">
+            <Label Text="Thông Tin Chi Tiết" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#2E8B57"/>
+            <Border BackgroundColor="White" Padding="20" StrokeThickness="1" Stroke="#A9A9A9" VerticalOptions="FillAndExpand">
+                <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, *" RowSpacing="10" ColumnSpacing="10">
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Mã Sách:" VerticalOptions="Center" TextColor="Black"/>
+                    <Entry Grid.Row="0" Grid.Column="1" Placeholder="Nhập Mã Sách" Text="{Binding SelectedBook.MaSach}" />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Tên Sách:" VerticalOptions="Center" TextColor="Black"/>
+                    <Entry Grid.Row="1" Grid.Column="1" Placeholder="Nhập Tên Sách" Text="{Binding SelectedBook.TenSach}" />
+
+                    <Label Grid.Row="2" Grid.Column="0" Text="Mã Loại Sách:" VerticalOptions="Center" TextColor="Black"/>
+                    <Entry Grid.Row="2" Grid.Column="1" Placeholder="Mã Loại" Text="{Binding SelectedBook.MaLoaiSach}" />
+
+                    <Label Grid.Row="3" Grid.Column="0" Text="Số Lượng:" VerticalOptions="Center" TextColor="Black"/>
+                    <Entry Grid.Row="3" Grid.Column="1" Placeholder="Số Lượng" Text="{Binding SelectedBook.SoLuong}" Keyboard="Numeric" />
+
+                    <Label Grid.Row="4" Grid.Column="0" Text="Mã Tác Giả:" VerticalOptions="Center" TextColor="Black"/>
+                    <Entry Grid.Row="4" Grid.Column="1" Placeholder="Mã Tác Giả" Text="{Binding SelectedBook.MaTacGia}" />
+                </Grid>
+            </Border>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Grid.Column="2" Spacing="5" VerticalOptions="StartAndExpand">
+
+            <Button Command="{Binding ThemSachCommand}"
+                Text="Thêm sách" 
+                BackgroundColor="#E0E0E0" TextColor="Black" HeightRequest="50" BorderColor="#A9A9A9" BorderWidth="1">
+            </Button>
+            
+            <Button Command="{Binding SuaSachCommand}"
+                Text="Sửa sách" 
+                BackgroundColor="#E0E0E0" TextColor="Black" HeightRequest="50" BorderColor="#A9A9A9" BorderWidth="1">
+            </Button>
+            
+            <Button Command="{Binding XoaSachCommand}"
+                Text="Xóa sách" 
+                BackgroundColor="#E0E0E0" TextColor="Black" HeightRequest="50" BorderColor="#A9A9A9" BorderWidth="1">
+            </Button>
+
+            <Button Command="{Binding CapNhatCommand}"
+                    Text="Cập Nhật" 
+                    BackgroundColor="#E0E0E0" TextColor="Black" HeightRequest="50" BorderColor="#A9A9A9" BorderWidth="1">
+            </Button>
+
+            <Button Command="{Binding QuanLyDocGiaCommand}"
+                    Text="Quản Lý Độc Giả" 
+                    BackgroundColor="#E0E0E0" TextColor="Black" HeightRequest="50" BorderColor="#A9A9A9" BorderWidth="1">
+            </Button>
+
+            <Button Command="{Binding QuanLyMuonTraCommand}"
+                    Text="Quản Lý Mượn Trả" 
+                    BackgroundColor="#E0E0E0" TextColor="Black" HeightRequest="50" BorderColor="#A9A9A9" BorderWidth="1">
+            </Button>
+
+            <Button Command="{Binding KetThucCommand}"
+                    Text="Đăng xuất" 
+                    BackgroundColor="#E0E0E0" TextColor="Black" HeightRequest="50" BorderColor="#A9A9A9" BorderWidth="1">
+            </Button>
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

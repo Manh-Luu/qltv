@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>qltv</name>
+    </assembly>
+    <members>
+        <member name="M:qltv.MainPage.BtnCapNhat_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Xử lý sự kiện khi nút "Cập Nhật" được nhấn.
+            Chức năng: Thêm mới, Sửa, Xóa dữ liệu sách
+            </summary>
+        </member>
+        <member name="M:qltv.MainPage.BtnQuanLyDocGia_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Xử lý sự kiện khi nút "Quản Lý Độc Giả" được nhấn.
+            Chức năng: Chuyển sang trang Quản lý Độc giả.
+            </summary>
+        </member>
+        <member name="M:qltv.MainPage.BtnQuanLyTacGia_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Xử lý sự kiện khi nút "Quản Lý Tác Giả" được nhấn.
+            Chức năng: Chuyển sang trang Quản lý Tác giả.
+            </summary>
+        </member>
+        <member name="M:qltv.MainPage.BtnQuanLyMuonTra_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Xử lý sự kiện khi nút "Quản Lý Mượn Trả" được nhấn.
+            Chức năng: Chuyển sang trang Quản lý Mượn Trả.
+            </summary>
+        </member>
+        <member name="M:qltv.MainPage.BtnTimKiem_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Xử lý sự kiện khi nút "Tìm Kiếm" được nhấn.
+            Chức năng: Thực hiện logic tìm kiếm sách.
+            </summary>
+        </member>
+        <member name="M:qltv.MainPage.BtnKetThuc_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Xử lý sự kiện khi nút "Kết Thúc" được nhấn.
+            Chức năng: Đóng ứng dụng hoặc quay về màn hình chính.
+            </summary>
+        </member>
+        <member name="T:qltv.ViewModels.LibraryManagerViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:qltv.ViewModels.LibraryManagerViewModel.SelectedBook">
+            <inheritdoc cref="F:qltv.ViewModels.LibraryManagerViewModel._selectedBook"/>
+        </member>
+        <member name="P:qltv.ViewModels.LibraryManagerViewModel.BookList">
+            <inheritdoc cref="F:qltv.ViewModels.LibraryManagerViewModel._bookList"/>
+        </member>
+        <member name="F:qltv.ViewModels.LibraryManagerViewModel.capNhatCommand">
+            <summary>The backing field for <see cref="P:qltv.ViewModels.LibraryManagerViewModel.CapNhatCommand"/>.</summary>
+        </member>
+        <member name="P:qltv.ViewModels.LibraryManagerViewModel.CapNhatCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:qltv.ViewModels.LibraryManagerViewModel.CapNhat"/>.</summary>
+        </member>
+        <member name="F:qltv.ViewModels.LibraryManagerViewModel.quanLyDocGiaCommand">
+            <summary>The backing field for <see cref="P:qltv.ViewModels.LibraryManagerViewModel.QuanLyDocGiaCommand"/>.</summary>
+        </member>
+        <member name="P:qltv.ViewModels.LibraryManagerViewModel.QuanLyDocGiaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:qltv.ViewModels.LibraryManagerViewModel.QuanLyDocGia"/>.</summary>
+        </member>
+        <member name="F:qltv.ViewModels.LibraryManagerViewModel.quanLyTacGiaCommand">
+            <summary>The backing field for <see cref="P:qltv.ViewModels.LibraryManagerViewModel.QuanLyTacGiaCommand"/>.</summary>
+        </member>
+        <member name="P:qltv.ViewModels.LibraryManagerViewModel.QuanLyTacGiaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:qltv.ViewModels.LibraryManagerViewModel.QuanLyTacGia"/>.</summary>
+        </member>
+        <member name="F:qltv.ViewModels.LibraryManagerViewModel.quanLyMuonTraCommand">
+            <summary>The backing field for <see cref="P:qltv.ViewModels.LibraryManagerViewModel.QuanLyMuonTraCommand"/>.</summary>
+        </member>
+        <member name="P:qltv.ViewModels.LibraryManagerViewModel.QuanLyMuonTraCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:qltv.ViewModels.LibraryManagerViewModel.QuanLyMuonTra"/>.</summary>
+        </member>
+        <member name="F:qltv.ViewModels.LibraryManagerViewModel.ketThucCommand">
+            <summary>The backing field for <see cref="P:qltv.ViewModels.LibraryManagerViewModel.KetThucCommand"/>.</summary>
+        </member>
+        <member name="P:qltv.ViewModels.LibraryManagerViewModel.KetThucCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:qltv.ViewModels.LibraryManagerViewModel.KetThuc"/>.</summary>
+        </member>
+        <member name="T:qltv.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedBook">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedBook" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CanExecuteCapNhat">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CanExecuteCapNhat" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.BookList">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "BookList" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedBook">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedBook" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CanExecuteCapNhat">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CanExecuteCapNhat" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.BookList">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "BookList" generated properties.</summary>
+        </member>
+    </members>
+</doc>
